@@ -1,21 +1,29 @@
-break;
+case "OR":
+                    if (arg1 == 1) b1.or(b2);
+                    else b2.or(b1);
+                    break;
+                    
                 case "XOR":
-                    bitsets[arg1].xor(bitsets[arg2]);
+                    if (arg1 == 1) b1.xor(b2);
+                    else b2.xor(b1);
                     break;
+                    
                 case "FLIP":
-                    bitsets[arg1].flip(arg2);
+                    if (arg1 == 1) b1.flip(arg2);
+                    else b2.flip(arg2);
                     break;
+                    
                 case "SET":
-                    bitsets[arg1].set(arg2);
+                    if (arg1 == 1) b1.set(arg2);
+                    else b2.set(arg2);
                     break;
             }
-
-            // Print set bits count using cardinality()
-            System.out.println(b1.cardinality() + " " + b2.cardinality
-            ());
+            
+            // Print the count of set bits (cardinality) after each operation
+            System.out.println(b1.cardinality() + " " + b2.cardinality());
         }
-
-        scanner.close();
+        
+        sc.close();
     }
 }
 
